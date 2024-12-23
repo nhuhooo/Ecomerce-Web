@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Delivery Time</title>
+</head>
+<body>
+    <h1>Predict Delivery Time</h1>
+    <form method="POST" action="/">
+        <label for="createdAt">Created At:</label>
+        <input type="datetime-local" name="createdAt" required><br>
+
+        <label for="shippingDistance">Shipping Distance:</label>
+        <input type="number" name="shippingDistance" required><br>
+
+        <label for="serviceType">Service Type:</label>
+        <select name="serviceType" required>
+            <option value="3h">3h</option>
+            <option value="5h">5h</option>
+        </select><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if prediction %}
+    <h2>Predicted Delivery Time: {{ prediction }} </h2>
+    {% endif %}
+</body>
+</html>
